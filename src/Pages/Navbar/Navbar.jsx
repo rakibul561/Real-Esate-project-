@@ -1,6 +1,18 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+
+    const { user,logOut } = useContext(AuthContext);
+
+    const handleSignout = ()=>{
+        logOut()
+        .then()
+        .catch(error=>{
+            console.error(error);
+        })
+    }
 
     const navLinks = <>
 
@@ -30,18 +42,26 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navLinks}
-                </ul> 
+                </ul>
             </div>
             <div className="navbar-end gap-2">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
                         <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                     </div>
                 </div>
-                <Link to='/login' >
-                    <button  className="btn text-white bg-[#23BE0A]">Login</button>
-                </Link>
-                
+
+                {
+                    user ?
+                        <button onClick={handleSignout} className="btn text-white bg-[#23BE0A]">Sign out</button>
+                        :
+                        <Link to='/login' >
+                            <button className="btn text-white bg-[#23BE0A]">Login</button>
+                        </Link>
+                }
+
+
+
             </div>
         </div>
     );
