@@ -11,8 +11,6 @@ const Navbar = () => {
         <li> <NavLink to='/update'> Update Profile</NavLink> </li>
 
 
-
-
     </>
 
 
@@ -27,22 +25,23 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Real state</a>
+                <a className="btn btn-ghost text-xl"> Real <span className="text-[#23BE0A]">Commercial</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navLinks}
-                </ul>
+                </ul> 
             </div>
             <div className="navbar-end gap-2">
-                <Link>
-                    <button className="btn">Login</button>
-                </Link>
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
                         <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                     </div>
                 </div>
+                <Link to='/login' >
+                    <button  className="btn text-white bg-[#23BE0A]">Login</button>
+                </Link>
+                
             </div>
         </div>
     );
