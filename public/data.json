@@ -1,0 +1,51 @@
+[
+    {
+      "image_url": "https://i.ibb.co/fnyt9Gc/photo-1606225948173-47c1d329c054.jpg",
+      "estate_title": "Exquisite Beachfront Villa",
+      "id": "12345",
+      "segment_name": "Luxury Retreats",
+      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "price": "$7,500,000"
+    },
+    {
+      "image_url": "https://i.ibb.co/Tb1D1nR/photo-1555396273-367ea4eb4db5.jpg",
+      "estate_title": "Prestigious City Penthouse",
+      "id": "67890",
+      "segment_name": "retail spaces",
+      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "price": "$3,200,000"
+    },
+    {
+      "image_url": "https://i.ibb.co/2hK3v9X/photo-1555396273-367ea4eb4db5.jpg",
+      "estate_title": "Tranquil Countryside Estate",
+      "id": "24680",
+      "segment_name": "Warehouses",
+      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "price": "$1,950,000"
+    },
+    {
+      "image_url": "https://i.ibb.co/y5B4jDM/photo-1555396273-367ea4eb4db5.jpg",
+      "estate_title": "Chic City Loft",
+      "id": "13579",
+      "segment_name":"industrial facilities",
+      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "price": "$900,000"
+    },
+    {
+      "image_url": "https://i.ibb.co/gm7c7Gq/photo-1552566626-52f8b828add9.jpg",
+      "estate_title": "Secluded Mountain Retreat",
+      "id": "97531",
+      "segment_name": "restaurants",
+      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "price": "$1,350,000"
+    },
+    {
+      "image_url": "https://i.ibb.co/pPBmHRZ/photo-1533923156502-be31530547c4.jpg",
+      "estate_title": "Luxury Waterfront Condo",
+      "id": "80246",
+      "segment_name": "entertainment venues etc",
+      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "price": "$2,750,000"
+    }
+  ]
+  

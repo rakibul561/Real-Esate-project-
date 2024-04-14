@@ -11,7 +11,8 @@ import Register from "../Pages/Shared/Login/Register/Register";
         children: [
             {
                 path:'/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('data.json'),
             },
             {
               path: '/login',
