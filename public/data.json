@@ -12,7 +12,7 @@
       "estate_title": "Prestigious City Penthouse",
       "id": "67890",
       "segment_name": "retail spaces",
-      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "description": "Elevate your lifestyle with this prestigious city penthouse. Boasting expansive city views, contemporary design, gourmet kitchen, and exclusive building amenities including a private elevator and 24/7 concierge service..",
       "price": "$3,200,000"
     },
     {
@@ -20,7 +20,7 @@
       "estate_title": "Tranquil Countryside Estate",
       "id": "24680",
       "segment_name": "Warehouses",
-      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "description": "Discover serenity in this enchanting countryside estate. Surrounded by lush greenery, this property offers privacy, spacious interiors, outdoor recreation areas, and modern comforts for the perfect escape from the city.",
       "price": "$1,950,000"
     },
     {
@@ -28,7 +28,7 @@
       "estate_title": "Chic City Loft",
       "id": "13579",
       "segment_name":"industrial facilities",
-      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "description": "Experience urban sophistication in this chic city loft. With industrial-inspired design, open floor plan, exposed brick walls, and rooftop terrace, this loft embodies modern city living at its finest.",
       "price": "$900,000"
     },
     {
@@ -36,7 +36,7 @@
       "estate_title": "Secluded Mountain Retreat",
       "id": "97531",
       "segment_name": "restaurants",
-      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "description":  "Escape to the mountains with this secluded retreat. Nestled among towering pines, this property offers panoramic mountain views, cozy interiors, outdoor hot tub, and access to hiking trails for the ultimate nature getaway.",
       "price": "$1,350,000"
     },
     {
@@ -44,7 +44,7 @@
       "estate_title": "Luxury Waterfront Condo",
       "id": "80246",
       "segment_name": "entertainment venues etc",
-      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
+      "description": "Live in luxury with this waterfront condo offering stunning views of the harbor. With modern design, expansive windows, private balcony, and resort-style amenities including a marina and waterfront promenade, this condo redefines coastal living.",
       "price": "$2,750,000"
     }
   ]

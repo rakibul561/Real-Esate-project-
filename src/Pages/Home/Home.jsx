@@ -7,7 +7,7 @@ import Fotter from "../Footer/Fotter";
 const Home = () => {
 
     const data = useLoaderData();
-    console.log(data);
+    // console.log(data);
     return (
         <div>
             <Navbar></Navbar>
@@ -18,7 +18,7 @@ const Home = () => {
                     <p className="text-center font-semibold mt-2">His estate, a magnificent expanse, boasted regal architecture <br /> amidst manicured gardens, a testament to opulence</p>
                 </div>
                  
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 space-y-4 mt-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
                     {
                      data.map(aData => <News
                      key={aData.id}
