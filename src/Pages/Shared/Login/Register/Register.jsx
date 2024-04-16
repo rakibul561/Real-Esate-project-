@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../../Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../../Provider/AuthProvider";
 
 const Register = () => {
+
+    const [registerError, setRegisterError ] = useState('');
+    const [success, setSuccess] = useState(false);
  
-     const {crateUser} = useContext(AuthContext);
+     const {crateUser,updateUserProfile} = useContext(AuthContext);
  
     const handleRegister = e =>{
         e.preventDefault();
@@ -16,14 +19,39 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(email,password,name,photo);
+        
+        setRegisterError('');
+        setSuccess('');
+
+       
+        if (!/[A-Z]/.test(password)) {
+            setRegisterError('Your password should have at least one uppercase character');
+            return;
+        }
+        
+         else if (!/A-Z/.text(password)){
+            setRegisterError('your password should have at least one upper case characters');
+            return;
+         }
+
+
+
+
         // crate User in 
 
         crateUser(email,password)
         .then(result=>{
-            console.log(result.user);
+            updateUserProfile(name,photo)
+            .then(()=>{
+              console.log(result.user);
+              setSuccess(true); 
+              alert('Registration Successful!');
+            })
+            
         })
         .catch(error=>{
             console.error(error);
+            setRegisterError(error.message)
         })
     }
 
@@ -72,7 +100,13 @@ const Register = () => {
                         <button className="btn btn-primary">Register</button>
                     </div>
                 </form>
+                  
+              {
+                registerError && <p className="text-red-700 text-center">{registerError} </p>
+              }
                 <p className="text-center">Alrady have an Account <Link className="text-blue-600 font-bold" to='/login'>Login</Link></p>
+            
+
             </div>
         </div>
     );

@@ -14,7 +14,7 @@ const NewsDetail = () => {
     return (
         <div>
             <Navbar />
-            <div className="hero lg:h-[500px] lg:w-[900px] rounded-xl bg-base-200">
+            <div className="hero min-h-screen rounded-xl bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src= {image_url} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
