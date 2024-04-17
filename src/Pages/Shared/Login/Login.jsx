@@ -5,7 +5,8 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Login = () => {
 
-     const {signIn} = useContext(AuthContext);
+     const {signIn, googleLogin} = useContext(AuthContext);
+     console.log(googleLogin);
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -56,6 +57,9 @@ const Login = () => {
                     </div>
                 </form>
                 <p className="text-center">Crate a new Account <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
+            </div>
+            <div>
+                <button onClick={()=>googleLogin() }>Google</button>
             </div>
 
 

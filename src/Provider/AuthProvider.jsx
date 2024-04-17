@@ -1,22 +1,34 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
+import { GoogleAuthProvider } from "firebase/auth/cordova";
 
 export const AuthContext = createContext(null);
+const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
 
     const auth = getAuth(app)
 
     const [user, setUser] = useState(null);
+     const [loading, setLoading] = useState(true);
 
     const crateUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
 
     const signIn = (email, password)=>{
+        setLoading(true);
         signInWithEmailAndPassword(auth,password ,email)
+    };
+      
+    const googleLogin = () =>{
+    return  signInWithPopup(auth, googleProvider)
     }
+
+
+
 
     const updateUserProfile = (name,image) =>{
         return updateProfile(auth.currentUser, {
@@ -34,7 +46,8 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscirbe = onAuthStateChanged(auth, currentUser => {
             console.log('user in the auth sata ', currentUser);
-            setUser(currentUser)
+            setUser(currentUser);
+            setLoading(false)
         });
         return() =>{
             unSubscirbe();
@@ -47,6 +60,8 @@ const AuthProvider = ({ children }) => {
         user,
         crateUser,
         signIn,
+        googleLogin,
+        loading,
         logOut,
         updateUserProfile,
         

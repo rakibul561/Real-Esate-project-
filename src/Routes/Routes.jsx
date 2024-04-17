@@ -4,11 +4,14 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Shared/Login/Login";
 import Register from "../Pages/Shared/Login/Register/Register";
 import NewsDetail from "../Pages/News/NewsDetail";
+import EroorPagse from "../Pages/EroorPagse";
+import PrivetRoutes from "./PrivetRoutes";
 
   const routes = createBrowserRouter([
     {
         path: '/',
         element: <Root> </Root>,
+        errorElement: <EroorPagse></EroorPagse>,
         children: [
             {
                 path:'/',
@@ -17,7 +20,7 @@ import NewsDetail from "../Pages/News/NewsDetail";
             },
             {
               path: '/data/:id',
-              element: <NewsDetail></NewsDetail>,
+              element: <PrivetRoutes> <NewsDetail></NewsDetail> </PrivetRoutes>,
               loader: () => fetch('/data.json')
             },
             {
