@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
@@ -6,7 +6,10 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const Login = () => {
 
      const {signIn, googleLogin} = useContext(AuthContext);
+     const location = useLocation();
+     const navigate = useNavigate();
      console.log(googleLogin);
+     console.log('this is a location',location);
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -19,6 +22,8 @@ const Login = () => {
         signIn(email,password)
         .then(result =>{
             console.log(result.user);
+            // navigate after login
+            navigate(location.state ? location.state: '/');
         })
         .catch(error=>{
             console.error(error)
