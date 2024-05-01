@@ -6,9 +6,6 @@ const Header = () => {
                 <img src="https://i.ibb.co/NFBcdfm/photo-1497366754035-f200968a6e72.jpg" className="w-full" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide4" className="btn btn-circle">❮</a>
-                    <div >
-                        <h2 className="text-5xl text-green-800 font-bold ">hello world iam a rakib</h2>
-                    </div>
                     <a href="#slide2" className="btn btn-circle">❯</a>
                 </div>
             </div>

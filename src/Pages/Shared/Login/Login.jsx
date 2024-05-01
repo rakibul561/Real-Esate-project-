@@ -2,32 +2,33 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import Button from "./Button";
 
 const Login = () => {
+    const { signIn, googleLoginUser, } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(googleLoginUser);
+    console.log('this is a location', location);
 
-     const {signIn, googleLogin} = useContext(AuthContext);
-     const location = useLocation();
-     const navigate = useNavigate();
-     console.log(googleLogin);
-     console.log('this is a location',location);
-
-    const handleLogin = e =>{
+    const handleLogin = e => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email,password);
+        console.log(email, password);
+        
 
-        signIn(email,password)
-        .then(result =>{
-            console.log(result.user);
-            // navigate after login
-            navigate(location.state ? location.state: '/');
-        })
-        .catch(error=>{
-            console.error(error)
-        })
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user);
+                // navigate after login
+                navigate(location.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 
 
@@ -43,16 +44,16 @@ const Login = () => {
                             <span className="label-text">Email</span>
                         </label>
                         <input type="email" placeholder="email"
-                        name="email"
-                        className="input input-bordered" required />
+                            name="email"
+                            className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="password" 
-                        name="password"
-                        className="input input-bordered" required />
+                        <input type="password" placeholder="password"
+                            name="password"
+                            className="input input-bordered" required />
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
@@ -63,11 +64,9 @@ const Login = () => {
                 </form>
                 <p className="text-center">Crate a new Account <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
             </div>
-            <div>
-                <button onClick={()=>googleLogin() }>Google</button>
+            <div className="text-center">
+                <Button></Button>
             </div>
-
-
         </div>
     );
 };

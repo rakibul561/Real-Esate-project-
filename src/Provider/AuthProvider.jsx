@@ -1,16 +1,19 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+/* eslint-disable react/prop-types */
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider,GithubAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
-import { GoogleAuthProvider } from "firebase/auth/cordova";
-
 export const AuthContext = createContext(null);
+
 const googleProvider = new GoogleAuthProvider();
+const githubProvaider = new GithubAuthProvider();
+
+
 const AuthProvider = ({ children }) => {
 
-    const auth = getAuth(app)
+    const auth = getAuth(app);
 
     const [user, setUser] = useState(null);
-     const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     const crateUser = (email, password) => {
         setLoading(true);
@@ -18,28 +21,33 @@ const AuthProvider = ({ children }) => {
     }
 
 
-    const signIn = (email, password)=>{
+    const signIn = (email, password) => {
         setLoading(true);
-        signInWithEmailAndPassword(auth,password ,email)
+        signInWithEmailAndPassword(auth, password, email)
     };
-      
-    const googleLogin = () =>{
-    return  signInWithPopup(auth, googleProvider)
-    }
+
+    // goole login 
+    const googleLoginUser = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    };
+
+    //  github login 
+    const githubLogin = () => {
+        return signInWithPopup(auth, githubProvaider);
+    };
 
 
-
-
-    const updateUserProfile = (name,image) =>{
+    const updateUserProfile = (name, image) => {
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: image
-          })
+        })
     }
 
 
 
 
-    const logOut = ()=>{
+    const logOut = () => {
         return signOut(auth);
     }
 
@@ -49,9 +57,10 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             setLoading(false)
         });
-        return() =>{
+        return () => {
             unSubscirbe();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 
@@ -60,11 +69,12 @@ const AuthProvider = ({ children }) => {
         user,
         crateUser,
         signIn,
-        googleLogin,
+        googleLoginUser,
         loading,
+        githubLogin,
         logOut,
         updateUserProfile,
-        
+
     }
 
     return (

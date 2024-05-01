@@ -1,17 +1,18 @@
-import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, NavLink, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+    const [userOpen, setUserOpen] = useState();
+    const { user, logOut } = useContext(AuthContext)
 
-    const { user,logOut } = useContext(AuthContext);
+    const handleLogOUt = async () => {
+        await logOut()
+        if (logOut.insertedId) {
+            alert('user login successfully')
 
-    const handleSignout = ()=>{
-        logOut()
-        .then()
-        .catch(error=>{
-            console.error(error);
-        })
+        }
+        Navigate("/login")
     }
 
     const navLinks = <>
@@ -43,10 +44,10 @@ const Navbar = () => {
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end gap-2">
+            {/* <div className="navbar-end gap-2">
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/bspwk8t/1679870967357-01.jpg" />
                     </div>
                 </div>
 
@@ -61,6 +62,47 @@ const Navbar = () => {
 
 
 
+            </div> */}
+            <div>
+                {user ? (
+                    <button
+                        onClick={() => setUserOpen(!userOpen)}
+                        className="border-2 ml-28 border-[#FF497C] rounded-full w-[40px]"
+                    >
+                        <img
+                            src={user?.photoURL}
+                            alt=""
+                            className="w-10 h-10 rounded-full"
+                        />
+                    </button>
+                ) : (
+                    <Link
+                        to={"/login"}
+                        className="bg-[#FF497C] hover:bg-[#ab3154]  duration-200 text-white font-bold px-4 xl:px-6 py-1 rounded"
+                    >
+                        Login
+                    </Link>
+                )}
+
+                {/* user Menu */}
+                <div
+                    className={`absolute z-50 ${userOpen ? "block" : "hidden"
+                        } flex flex-col  gap-4  shadow-lg bg-base-200 px-8 py-4 top-16 `}
+                >
+                    <p className="text-sm  font-semibold">{user?.displayName}</p>
+                    <p className="text-sm font-semibold">{user?.email}</p>
+
+                    {
+                        user && <button
+
+                            className="bg-[#FF497C] hover:bg-[#ab3154] duration-200 text-white font-bold px-4 xl:px-6 py-1 rounded cursor-pointer"
+                            onClick={handleLogOUt}
+                        >
+                            logout
+                        </button>
+                    }
+
+                </div>
             </div>
         </div>
     );

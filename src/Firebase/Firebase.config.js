@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBGnaTqFhJ9or769Mw_nY7q89UisvSVkaE",
-  authDomain: "react-estate-project.firebaseapp.com",
-  projectId: "react-estate-project",
-  storageBucket: "react-estate-project.appspot.com",
-  messagingSenderId: "67827502556",
-  appId: "1:67827502556:web:ff93ff545e6ef49d43d319"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket:import.meta.env.VITE_STORAGEBUCKET ,
+  messagingSenderId:import.meta.envVITE_MESSAGINGSENDERID ,
+  appId:import.meta.env.VITE_APPID ,
 };
 
 // Initialize Firebase
