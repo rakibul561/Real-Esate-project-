@@ -7,10 +7,9 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
 
     const handleLogOUt = async () => {
-        await logOut()
+        await logOut();
         if (logOut.insertedId) {
-            alert('user login successfully')
-
+            alert('user logout successfully')
         }
         Navigate("/login")
     }
@@ -18,9 +17,7 @@ const Navbar = () => {
     const navLinks = <>
 
         <li> <NavLink to='/'> Home</NavLink> </li>
-        {/* {/* <li> <NavLink to='/about'>About</NavLink> </li> */}
          <li> <NavLink to='/login'> Login</NavLink> </li> 
-
         <li> <NavLink to='/contact'> Contact</NavLink> </li>
     </>
     return (

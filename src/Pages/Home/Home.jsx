@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
 import News from "../News/News";
 import Client from "./Client";
+import Extra from "./Extra";
 // import Fotter from "../Footer/Fotter";
 
 const Home = () => {
@@ -30,6 +31,10 @@ const Home = () => {
                 </div>
                 {/* <Fotter></Fotter> */}
                 <Client></Client>
+                {/* <div className="mt-8">
+                    <Extra></Extra>
+                </div> */}
+                <Extra></Extra>
             </div>
         </div>
     );
