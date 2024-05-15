@@ -1,51 +1,74 @@
 [
-    {
-      "image_url": "https://i.ibb.co/fnyt9Gc/photo-1606225948173-47c1d329c054.jpg",
-      "estate_title": "Exquisite Beachfront Villa",
-      "id": "12345",
-      "segment_name": "Luxury Retreats",
-      "description": "Escape to paradise with this breathtaking beachfront villa. Featuring panoramic ocean views, private beach access,.",
-      "price": "$7,500,000"
-    },
-    {
-      "image_url": "https://i.ibb.co/Tb1D1nR/photo-1555396273-367ea4eb4db5.jpg",
-      "estate_title": "Prestigious City Penthouse",
-      "id": "67890",
-      "segment_name": "retail spaces",
-      "description": "Elevate your lifestyle with this prestigious city penthouse. Boasting expansive city views, contemporary design, gourmet kitchen, and exclusive building amenities including a private elevator and 24/7 concierge service..",
-      "price": "$3,200,000"
-    },
-    {
-      "image_url": "https://i.ibb.co/2hK3v9X/photo-1555396273-367ea4eb4db5.jpg",
-      "estate_title": "Tranquil Countryside Estate",
-      "id": "24680",
-      "segment_name": "Warehouses",
-      "description": "Discover serenity in this enchanting countryside estate. Surrounded by lush greenery, this property offers privacy, spacious interiors, outdoor recreation areas, and modern comforts for the perfect escape from the city.",
-      "price": "$1,950,000"
-    },
-    {
-      "image_url": "https://i.ibb.co/y5B4jDM/photo-1555396273-367ea4eb4db5.jpg",
-      "estate_title": "Chic City Loft",
-      "id": "13579",
-      "segment_name":"industrial facilities",
-      "description": "Experience urban sophistication in this chic city loft. With industrial-inspired design, open floor plan, exposed brick walls, and rooftop terrace, this loft embodies modern city living at its finest.",
-      "price": "$900,000"
-    },
-    {
-      "image_url": "https://i.ibb.co/gm7c7Gq/photo-1552566626-52f8b828add9.jpg",
-      "estate_title": "Secluded Mountain Retreat",
-      "id": "97531",
-      "segment_name": "restaurants",
-      "description":  "Escape to the mountains with this secluded retreat. Nestled among towering pines, this property offers panoramic mountain views, cozy interiors, outdoor hot tub, and access to hiking trails for the ultimate nature getaway.",
-      "price": "$1,350,000"
-    },
-    {
-      "image_url": "https://i.ibb.co/pPBmHRZ/photo-1533923156502-be31530547c4.jpg",
-      "estate_title": "Luxury Waterfront Condo",
-      "id": "80246",
-      "segment_name": "entertainment venues etc",
-      "description": "Live in luxury with this waterfront condo offering stunning views of the harbor. With modern design, expansive windows, private balcony, and resort-style amenities including a marina and waterfront promenade, this condo redefines coastal living.",
-      "price": "$2,750,000"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "estate_title": "Single-family Home with Spacious Yard",
+    "segment_name": "Residential",
+    "description": "Enjoy the comforts of suburban living in this single-family home featuring a spacious yard, perfect for outdoor activities and entertaining. With multiple bedrooms and modern amenities, this property is ideal for families.",
+    "price": "$600,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Los Angeles, California",
+    "facilities": ["Backyard garden", "Attached garage"],
+    "image": "https://i.ibb.co/qgnh61N/12661.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Townhouse in Urban Community",
+    "segment_name": "Residential",
+    "description": "Experience urban living at its finest in this modern townhouse located in a vibrant community. With sleek design and convenient amenities, this property offers the perfect blend of style and functionality.",
+    "price": "$450,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "Brooklyn, New York",
+    "facilities": ["Rooftop terrace", "Community pool"],
+    "image": "https://i.ibb.co/mGcQqZB/2149085486.jpg"
+  },
+  {
+    "id": 3,
+    "estate_title": "Luxury Apartment in High-rise Tower",
+    "segment_name": "Residential",
+    "description": "Indulge in luxury living in this high-rise apartment offering breathtaking views and upscale amenities. With spacious interiors and premium finishes, this property provides an elevated urban lifestyle.",
+    "price": "$1,200,000",
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": "Chicago, Illinois",
+    "facilities": ["Sky lounge", "Fitness center"],
+    "image": "https://i.ibb.co/F30f0cK/istockphoto-1318834610-1024x1024.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Student Housing Near Campus",
+    "segment_name": "Residential",
+    "description": "Find your home away from home in this conveniently located student housing complex. With furnished units and on-site amenities, this property offers a comfortable and convenient living experience for students.",
+    "price": "$800",
+    "status": "rent",
+    "area": "500 sq ft (per room)",
+    "location": "Austin, Texas",
+    "facilities": ["Fully furnished units", "Study lounges"],
+    "image": "https://i.ibb.co/RpQ80rH/istockphoto-1166870171-1024x1024.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Senior Living Community with Care Services",
+    "segment_name": "Residential",
+    "description": "Experience retirement living at its finest in this senior living community offering a range of care services and amenities. With spacious accommodations and social activities, residents can enjoy a fulfilling lifestyle.",
+    "price": "$3,500",
+    "status": "rent",
+    "area": "700 sq ft (per unit)",
+    "location": "Scottsdale, Arizona",
+    "facilities": ["Assisted living services", "Restaurant-style dining"],
+    "image": "https://i.ibb.co/9WXStWq/istockphoto-1400090823-1024x1024.jpg"
+  },
+  {
+    "id": 6,
+    "estate_title": "Vacation Rental with Beachfront Access",
+    "segment_name": "Vacation Rentals",
+    "description": "Escape to paradise in this stunning vacation rental offering direct beachfront access and panoramic ocean views. With luxurious accommodations and resort-style amenities, this property is the perfect getaway.",
+    "price": "$300",
+    "status": "rent",
+    "area": "1500 sq ft",
+    "location": "Maui, Hawaii",
+    "facilities": ["Infinity pool", "BBQ area"],
+    "image": "https://i.ibb.co/qWxHx81/2073.jpg"
+  }
+]

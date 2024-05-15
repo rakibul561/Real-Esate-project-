@@ -5,7 +5,8 @@ const Root = () => {
         <div >
            <div className = "max-w-7xl mx-auto mt-10 font-poppins">
            <Outlet></Outlet>
-           </div>
+        </div>
+       
            <div className="mt-12">
             <Fotter></Fotter>
            </div>

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider,GithubAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider,GithubAuthProvider, onAuthStateChanged, signInWithPopup, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
 export const AuthContext = createContext(null);
@@ -18,13 +18,17 @@ const AuthProvider = ({ children }) => {
     const crateUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
-    }
+    } 
 
-
+    // login 
     const signIn = (email, password) => {
-        setLoading(true);
-        signInWithEmailAndPassword(auth, password, email)
-    };
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+     
+
+
+   
 
     // goole login 
     const googleLoginUser = () => {
@@ -36,16 +40,9 @@ const AuthProvider = ({ children }) => {
     const githubLogin = () => {
         return signInWithPopup(auth, githubProvaider);
     };
+    // update profile 
 
-
-    const updateUserProfile = (name, image) => {
-        return updateProfile(auth.currentUser, {
-            displayName: name, photoURL: image
-        })
-    }
-
-
-
+    //  update user profile
 
     const logOut = () => {
         return signOut(auth);
@@ -67,13 +64,13 @@ const AuthProvider = ({ children }) => {
 
     const authInfo = {
         user,
+        loading,
         crateUser,
         signIn,
         googleLoginUser,
-        loading,
         githubLogin,
         logOut,
-        updateUserProfile,
+        
 
     }
 

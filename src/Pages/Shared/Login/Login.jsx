@@ -3,6 +3,7 @@ import Navbar from "../../Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Button from "./Button";
+import 'animate.css';
 
 const Login = () => {
     const { signIn, googleLoginUser, } = useContext(AuthContext);
@@ -11,10 +12,10 @@ const Login = () => {
     console.log(googleLoginUser);
     console.log('this is a location', location);
 
-    const handleLogin = e => {
-        e.preventDefault();
-        console.log(e.currentTarget);
-        const form = new FormData(e.currentTarget);
+    const handleLogin = event => {
+        event.preventDefault();
+        console.log(event.currentTarget);
+        const form = new FormData(event.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
         console.log(email, password);
@@ -23,7 +24,6 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
-                // navigate after login
                 navigate(location.state ? location.state : '/');
             })
             .catch(error => {
@@ -32,12 +32,11 @@ const Login = () => {
     }
 
 
-
     return (
         <div>
             <Navbar></Navbar>
             <div>
-                <h1 className="text-center text-3xl font-bold">Please Login</h1>
+                <h1 className="text-center text-3xl font-bold animate__wobble">Please Login</h1>
                 <form onSubmit={handleLogin} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">
                         <label className="label">

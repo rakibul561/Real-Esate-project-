@@ -7,6 +7,7 @@ import NewsDetail from "../Pages/News/NewsDetail";
 import EroorPagse from "../Pages/EroorPagse";
 import PrivetRoutes from "./PrivetRoutes";
 import About from "../Pages/About";
+import Update from "../Pages/Home/Update";
 
   const routes = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ import About from "../Pages/About";
             {
               path: '/register',
               element: <Register></Register>
+            },
+            {
+              path:'/contact',
+              element:<PrivetRoutes><Update></Update></PrivetRoutes>
             }
         ]
     }

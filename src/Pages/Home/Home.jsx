@@ -2,7 +2,8 @@ import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
 import News from "../News/News";
-import Fotter from "../Footer/Fotter";
+import Client from "./Client";
+// import Fotter from "../Footer/Fotter";
 
 const Home = () => {
 
@@ -28,6 +29,7 @@ const Home = () => {
                     }
                 </div>
                 {/* <Fotter></Fotter> */}
+                <Client></Client>
             </div>
         </div>
     );
